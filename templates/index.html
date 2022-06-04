@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Price Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container pt-5">
+        <div class="card">
+            <h1 class="card-header text-center pt-3 pb-3 bg-primary text-white">Car Price Prediction</h1>
+            <div class="card-body" style="background-color: #c2cad0;">
+                <form method="post" accept-charset="utf-8">
+                    <div class="form-group">
+                        <label for="selectCompanyName">Company Name</label>
+                        <select class="form-control" id="selectCompanyName" name="company">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['CompanyName'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectYear">Year (year when you have purchesed your car)</label>
+                        <select class="form-control" id="selectYear" name="year">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['years'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectFuelType">Fuel Type</label>
+                        <select class="form-control" id="selectFuelType" name="fuel">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['fuel'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectTransmission">Transmission</label>
+                        <select class="form-control" id="selectTransmission" name="transmission">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['transmission'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectOwner">Owner</label>
+                        <select class="form-control" id="selectOwner" name="owner">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['owner'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectSellerType">Seller Type</label>
+                        <select class="form-control" id="selectSellerType" name="sellerType">
+                            <option selected disabled>Choose...</option>
+                            {% for item in params['sellerType'] %}
+                            <option>{{item}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectDriven">Km Driven</label>
+                        <input type="number" class="form-control" id="selectDriven" name="km_driven" placeholder="How much km vehicle ran?">
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="selectPresentPrice">Present Price of new vehicle</label>
+                        <input type="number" class="form-control" id="selectPresentPrice" name="presentPrice" placeholder="Enter present price">
+                    </div>
+                    <div class="form-group pt-5">
+                        <Button class="form-control bg-primary text-white" type="submit" onclick="submit_data()">Submit</Button>
+                    </div>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col-12" style="text-align:center">
+                        <h3> <span id="prediction_result"></span> </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function form_handler(event){
+            event.preventDefault();
+        }
+
+        function submit_data(){
+            document.querySelector('form').addEventListener('submit', form_handler);
+
+            var fd = new FormData(document.querySelector('form'));
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/predict', true);
+            document.getElementById("prediction_result").innerHTML = "Predicting Price...";
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    document.getElementById("prediction_result").innerHTML = "Predicted Price: "+ xhr.responseText;
+                }
+            }
+            xhr.onload = function(){};
+            xhr.send(fd);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
