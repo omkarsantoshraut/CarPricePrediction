@@ -72,7 +72,7 @@ pyrsistent==0.18.1
 PyYAML==6.0
 pyzmq==22.3.0
 requests==2.27.1
-scikit-learn==1.1.1
+scikit-learn
 scipy==1.8.0
 Send2Trash==1.8.0
 shellescape==3.8.1
