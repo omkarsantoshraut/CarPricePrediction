@@ -6,7 +6,9 @@ The project aims to assist both car buyers and sellers in making informed decisi
 
 # Table of contents:
 
-[Installation](#install)
+- [Installation](#install)
+- [Usage](#use)
+- [Features](#features)
 
 
 <a id="install">
@@ -23,5 +25,22 @@ The project aims to assist both car buyers and sellers in making informed decisi
   - Flask will run on the url something like `http://127.0.0.1:5000/`.
   - Navigate to that url and you will get the project interface.
   
+<a id="use">
   
+  # Usage:
   
+  As mentioned, this project will guide you to calculate the price of cars which you want to buy from buyer.
+  If you will run the project you will see the interface like below:
+  <img width="1053" alt="Screenshot 2023-06-11 at 4 21 44 PM" src="https://github.com/omkarsantoshraut/CarPricePrediction/assets/83705143/3699b460-ecf4-4f8f-bfd9-d577c680157f">
+As you can see in the above image you will need to provide a few amount of data as input to machine learning model in order to get predicted car price.
+
+<a id="features">
+  
+  # Features:
+  
+  - **Car Price Prediction:** The core feature of the application is to predict the price of a used car based on various factors.
+  - **User-friendly Interface:** The application provides a user-friendly interface, making it easy for users to input car details and obtain price predictions.
+  - **Historical Data Analysis:** The machine learning algorithms analyze historical car data to identify patterns and trends that influence car prices.
+  - **Model Accuracy:** The predictive models used in the application are trained on a large dataset to ensure accurate and reliable price predictions.
+  - **Customizable Inputs:** Users can adjust the input parameters, such as kilometer driven or fuel type, to see how these factors affect the predicted price.
+
