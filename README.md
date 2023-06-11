@@ -62,7 +62,7 @@ As you can see in the above image you will need to provide a few amount of data 
   
   # Dataset
   
-  Follow: https://github.com/omkarsantoshraut/CarPricePrediction/edit/main/README.md#:~:text=Data-,car_cleaned_data,-.csv
+  Follow: https://github.com/omkarsantoshraut/CarPricePrediction/blob/main/Data/car_cleaned_data.csv
 
 <a id="demo">
   
