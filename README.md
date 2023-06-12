@@ -11,6 +11,7 @@ The project aims to assist both car buyers and sellers in making informed decisi
 - [Features](#features)
 - [Technologies](#tech)
 - [Dataset](#dataset)
+- [Demo Video](#video)
 - [Live Demo](#demo)
 
 
@@ -65,6 +66,12 @@ As you can see in the above image you will need to provide a few amount of data 
   
   Follow: https://github.com/omkarsantoshraut/CarPricePrediction/blob/main/Data/car_cleaned_data.csv
 
+<a id="video">
+  
+  # Demo Video
+  
+  Follow: https://youtu.be/E0KghN60Hb0
+       
 <a id="demo">
   
   # Live Demo:
